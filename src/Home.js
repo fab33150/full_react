@@ -12,7 +12,7 @@ const Home = () => {
     {
       title: "Welcome to the Woo",
       body: "lorem ipsum...",
-      author: "smoke",
+      author: "monroe",
       id: 2,
     },
     {
@@ -23,9 +23,14 @@ const Home = () => {
     },
   ]);
 
+  const handleDelete = (id) => {
+    const newBlogs = blogs.filter((blog) => blog.id !== id);
+    setBlogs(newBlogs);
+  };
+
   return (
     <div className="home">
-      <Bloglist blogs={blogs} title="All Blogs!" />
+      <Bloglist blogs={blogs} title="All Blogs!" handleDelete={handleDelete} />
     </div>
   );
 };
